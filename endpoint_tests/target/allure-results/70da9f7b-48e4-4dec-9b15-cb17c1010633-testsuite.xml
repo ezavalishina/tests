@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1576137998720" stop="1576138021099" version="1.4.16" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Default Suite : endpoint-tests</name>
+    <title>Default Suite : endpoint-tests</title>
+    <test-cases>
+        <test-case start="1576138009818" stop="1576138020901" status="passed">
+            <name>createCustomer</name>
+            <title>Create customer</title>
+            <description type="text">Create customer via UI API</description>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="blocker"/>
+                <label name="feature" value="Customer feature"/>
+                <label name="host" value="ElenaZavalishina"/>
+                <label name="thread" value="25420@ElenaZavalishina.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1576138021003" stop="1576138021003" status="passed">
+            <name>checkCustomer</name>
+            <title>Check login</title>
+            <description type="text">Get customer id by login</description>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="critical"/>
+                <label name="feature" value="Customer feature"/>
+                <label name="host" value="ElenaZavalishina"/>
+                <label name="thread" value="25420@ElenaZavalishina.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

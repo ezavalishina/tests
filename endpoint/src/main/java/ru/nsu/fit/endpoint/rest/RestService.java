@@ -28,6 +28,7 @@ public class RestService {
     @GET
     @Path("/get_role")
     public Response getRole(@Context ContainerRequestContext crc) {
+        Response response = Response.ok().entity(String.format("{\"role\": \"%s\"}", crc.getProperty("ROLE"))).build();
         return Response.ok().entity(String.format("{\"role\": \"%s\"}", crc.getProperty("ROLE"))).build();
     }
 
@@ -82,6 +83,27 @@ public class RestService {
             Validate.isTrue(customers.size() == 1);
 
             return Response.ok().entity(JsonMapper.toJson(customers.get(0), true)).build();
+        } catch (IllegalArgumentException ex) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(ex.getMessage() + "\n" + ExceptionUtils.getFullStackTrace(ex)).build();
+        }
+    }
+
+    @RolesAllowed(AuthenticationFilter.ADMIN)
+    @POST
+    @Path("/delete_customer")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response deleteCustomer(String customerLoginJson) {
+        try {
+            Customer customerData = JsonMapper.fromJson(customerLoginJson, Customer.class);
+
+            System.out.println(customerData.getLogin());
+
+            // delete the customer
+            MainFactory.getInstance().getCustomerManager().removeCustomer(customerData.getLogin());
+
+            // send the answer
+            return Response.ok().build();
         } catch (IllegalArgumentException ex) {
             return Response.status(Response.Status.BAD_REQUEST).entity(ex.getMessage() + "\n" + ExceptionUtils.getFullStackTrace(ex)).build();
         }

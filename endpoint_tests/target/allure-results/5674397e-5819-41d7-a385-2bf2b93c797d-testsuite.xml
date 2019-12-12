@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1576162525319" stop="1576162582560" version="1.4.16" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Default Suite : endpoint-tests</name>
+    <title>Default Suite : endpoint-tests</title>
+    <test-cases>
+        <test-case start="1576162537700" stop="1576162548609" status="passed">
+            <name>checkLogin</name>
+            <title>Check incorrect login</title>
+            <description type="text">Check incorrect login via UI API</description>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="blocker"/>
+                <label name="feature" value="Customer feature"/>
+                <label name="host" value="ElenaZavalishina"/>
+                <label name="thread" value="8376@ElenaZavalishina.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1576162548719" stop="1576162560210" status="passed">
+            <name>createCustomer</name>
+            <title>Create customer</title>
+            <description type="text">Create customer via UI API</description>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="blocker"/>
+                <label name="feature" value="Customer feature"/>
+                <label name="host" value="ElenaZavalishina"/>
+                <label name="thread" value="8376@ElenaZavalishina.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1576162560213" stop="1576162571218" status="passed">
+            <name>checkVoidLogin</name>
+            <title>Check void login</title>
+            <description type="text">Check void login via UI API</description>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="blocker"/>
+                <label name="feature" value="Customer feature"/>
+                <label name="host" value="ElenaZavalishina"/>
+                <label name="thread" value="8376@ElenaZavalishina.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1576162571223" stop="1576162582460" status="passed">
+            <name>checkVoidPassword</name>
+            <title>Check void password</title>
+            <description type="text">Check void password via UI API</description>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="blocker"/>
+                <label name="feature" value="Customer feature"/>
+                <label name="host" value="ElenaZavalishina"/>
+                <label name="thread" value="8376@ElenaZavalishina.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1576162582465" stop="1576162582465" status="passed">
+            <name>checkCustomer</name>
+            <title>Check login</title>
+            <description type="text">Get customer id by login</description>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="critical"/>
+                <label name="feature" value="Customer feature"/>
+                <label name="host" value="ElenaZavalishina"/>
+                <label name="thread" value="8376@ElenaZavalishina.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

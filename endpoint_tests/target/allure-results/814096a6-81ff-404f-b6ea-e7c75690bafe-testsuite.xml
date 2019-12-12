@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1576168582095" stop="1576168601185" version="1.4.16" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Default Suite : endpoint-tests</name>
+    <title>Default Suite : endpoint-tests</title>
+    <test-cases>
+        <test-case start="1576168593861" stop="1576168595395" status="passed">
+            <name>createCustomer</name>
+            <title>Create customer</title>
+            <description type="text">Create customer via UI API</description>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="blocker"/>
+                <label name="feature" value="Customer feature"/>
+                <label name="host" value="ElenaZavalishina"/>
+                <label name="thread" value="21924@ElenaZavalishina.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1576168595674" stop="1576168596428" status="passed">
+            <name>createExistingCustomer</name>
+            <title>Check void password</title>
+            <description type="text">Check void password via UI API</description>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="blocker"/>
+                <label name="feature" value="Customer feature"/>
+                <label name="host" value="ElenaZavalishina"/>
+                <label name="thread" value="21924@ElenaZavalishina.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1576168596433" stop="1576168596854" status="passed">
+            <name>deleteExistingCustomer</name>
+            <title>Delete existing customer</title>
+            <description type="text">Delete existing customer via UI API</description>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="blocker"/>
+                <label name="feature" value="Customer feature"/>
+                <label name="host" value="ElenaZavalishina"/>
+                <label name="thread" value="21924@ElenaZavalishina.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

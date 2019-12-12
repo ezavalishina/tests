@@ -26,9 +26,17 @@ public class CustomerManager extends ParentManager {
     public Customer createCustomer(Customer customer) {
         Validate.notNull(customer, "Argument 'customerData' is null.");
 
-        Validate.notNull(customer.getPass());
-        Validate.isTrue(customer.getPass().length() >= 6 && customer.getPass().length() < 13, "Password's length should be more or equal 6 symbols and less or equal 12 symbols.");
-        Validate.isTrue(!customer.getPass().equalsIgnoreCase("123qwe"), "Password is easy.");
+        Validate.notNull(customer.pass);
+        Validate.isTrue(customer.pass.length() >= 6 && customer.pass.length() < 13, "Password's length should be more or equal 6 symbols and less or equal 12 symbols.");
+        Validate.isTrue(!customer.pass.equalsIgnoreCase("123qwe"), "Password is easy.");
+
+        Validate.notNull(customer.login);
+        Validate.isTrue(customer.login.matches("^\\S+@\\S+\\.[a-zA-Z]{1,10}$"), "login is incorrect");
+
+        dbService.getCustomers().forEach(x -> {
+            if (x.login.equals(customer.login))
+                throw new IllegalArgumentException("Customer with login " + customer.login + " already exists");
+        });
 
         // TODO: необходимо дописать дополнительные проверки
 
@@ -51,14 +59,15 @@ public class CustomerManager extends ParentManager {
         throw new NotImplementedException("Please implement the method.");
     }
 
-    public void removeCustomer(UUID id) {
-        throw new NotImplementedException("Please implement the method.");
+    public void removeCustomer(String login) {
+        Validate.notNull(login);
+        Validate.isTrue(login.matches("^\\S+@\\S+\\.[a-zA-Z]{1,10}$"), "login is incorrect");
+
+        UUID id = dbService.getCustomerIdByLogin(login);
+
+        dbService.removeCustomerById(id);
     }
 
-    /**
-     * Метод добавляет к текущему баласу amount.
-     * amount - должен быть строго больше нуля.
-     */
     public Customer topUpBalance(UUID customerId, int amount) {
         throw new NotImplementedException("Please implement the method.");
     }

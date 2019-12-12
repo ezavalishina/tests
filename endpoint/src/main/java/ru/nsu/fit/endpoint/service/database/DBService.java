@@ -18,6 +18,8 @@ public class DBService {
     private static final String SELECT_CUSTOMER = "SELECT id FROM CUSTOMER WHERE login='%s'";
     private static final String SELECT_CUSTOMERS = "SELECT * FROM CUSTOMER";
 
+    public static final String DELETE_CUSTOMER = "DELETE FROM CUSTOMER WHERE id='%s'";
+
     private Logger logger;
     private static final Object generalMutex = new Object();
     private Connection connection;
@@ -99,6 +101,8 @@ public class DBService {
         }
     }
 
+
+
     public Plan createPlan(Plan plan) {
         synchronized (generalMutex) {
             logger.info(String.format("Method 'createPlan' was called with data '%s'.", plan));
@@ -124,7 +128,7 @@ public class DBService {
     private void init() {
         logger.debug("-------- MySQL JDBC Connection Testing ------------");
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException ex) {
             logger.debug("Where is your MySQL JDBC Driver?", ex);
             throw new RuntimeException(ex);
@@ -147,6 +151,22 @@ public class DBService {
             logger.debug("You made it, take control your database now!");
         } else {
             logger.error("Failed to make connection!");
+        }
+    }
+
+    public boolean removeCustomerById(UUID id) {
+        synchronized (generalMutex) {
+            logger.info(String.format("Method 'removeCustomerById' was called with id: \n%s", id));
+
+            try {
+                Statement statement = connection.createStatement();
+                statement.executeUpdate(
+                        String.format(DELETE_CUSTOMER, id));
+                return true;
+            } catch (SQLException ex) {
+                logger.error(ex.getMessage(), ex);
+                throw new RuntimeException(ex);
+            }
         }
     }
 }

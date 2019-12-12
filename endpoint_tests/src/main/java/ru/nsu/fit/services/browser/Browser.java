@@ -22,6 +22,10 @@ import java.util.concurrent.TimeUnit;
 public class Browser implements Closeable {
     private WebDriver webDriver;
 
+    public WebDriver getWebDriver() {
+        return webDriver;
+    }
+
     public Browser() {
         // create web driver
         try {

@@ -17,10 +17,10 @@ public class Customer {
     private String lastName;
 
     @JsonProperty("login")
-    private String login;
+    public String login;
 
     @JsonProperty("pass")
-    private String pass;
+    public String pass;
 
     @JsonProperty("balance")
     private int balance;

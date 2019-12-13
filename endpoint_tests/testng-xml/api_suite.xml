@@ -1,8 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite verbose="1" name="API Tests" annotations="JDK" parallel="tests">
-    <test name="BuildVerificationTest">
+    <test name="AcceptanceTest">
         <classes>
-            <class name="ru.nsu.fit.tests.api.BuildVerificationTest" />
+            <class name="ru.nsu.fit.tests.LifeCycleTest" />
+        </classes>
+    </test>
+    <test name="UITests">
+        <classes>
+            <class name="ru.nsu.fit.tests.UITests" />
         </classes>
     </test>
 </suite>

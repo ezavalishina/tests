@@ -65,7 +65,7 @@ public class RestService {
         }
     }
 
-    @RolesAllowed(AuthenticationFilter.ADMIN)
+    //@RolesAllowed(AuthenticationFilter.ADMIN)
     @GET
     @Path("/get_customer_id/{customer_login}")
     @Consumes(MediaType.APPLICATION_JSON)

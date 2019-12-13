@@ -24,6 +24,8 @@ $(document).ready(function(){
                     })
                 }).done(function(data) {
                     $.redirect('/customers.html', {'login': 'admin', 'pass': 'setup', 'role': 'ADMIN'}, 'GET');
+                }).fail(function (data) {
+                    alert("Customer with this email is not existing");
                 });
             }
         }
